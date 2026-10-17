@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import type { ReactNode } from "react";
+import type { MouseEvent, ReactNode } from "react";
 
 type Props = {
   open: boolean;
@@ -29,7 +29,7 @@ export function Modal({ open, onClose, title, children, wide }: Props) {
             animate={{ y: 0, scale: 1 }}
             exit={{ y: 24, opacity: 0 }}
             transition={{ type: "spring", damping: 22, stiffness: 280 }}
-            onClick={(e) => e.stopPropagation()}
+            onClick={(e: MouseEvent<HTMLDivElement>) => e.stopPropagation()}
           >
             <div className="mb-4 flex items-start justify-between gap-3">
               <h2 id="modal-title" className="font-display text-xl font-bold">
