@@ -1,21 +1,40 @@
 import { WORKS_CITED } from "@content/gameContent";
 
-export function WorksCited() {
+const URL_RE = /(https?:\/\/[^\s]+)/g;
+
+function hrefFromUrl(raw: string): string {
+  return raw.replace(/[.,;)\]]+$/, "");
+}
+
+function CitationEntry({ text }: { text: string }) {
+  const parts = text.split(URL_RE);
   return (
-    <ul className="space-y-2 break-all text-sm text-white/85">
-      {WORKS_CITED.map((line, i) =>
-        /^https?:\/\//.test(line) ? (
-          <li key={i} className="pl-4">
-            <a href={line} target="_blank" rel="noreferrer" className="text-regime-gold underline hover:text-white">
-              {line}
-            </a>
-          </li>
+    <li className="leading-relaxed">
+      {parts.map((part, i) =>
+        /^https?:\/\//.test(part) ? (
+          <a
+            key={i}
+            href={hrefFromUrl(part)}
+            target="_blank"
+            rel="noreferrer"
+            className="text-regime-gold underline hover:text-white"
+          >
+            {part}
+          </a>
         ) : (
-          <li key={i} className="font-semibold">
-            {line}
-          </li>
+          <span key={i}>{part}</span>
         ),
       )}
-    </ul>
+    </li>
+  );
+}
+
+export function WorksCited() {
+  return (
+    <ol className="list-decimal space-y-4 pl-5 text-sm text-white/85 marker:text-regime-gold">
+      {WORKS_CITED.map((entry, i) => (
+        <CitationEntry key={i} text={entry} />
+      ))}
+    </ol>
   );
 }

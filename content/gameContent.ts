@@ -17,15 +17,13 @@ export const GAME_RULES = {
   skillSquareCount: 3,
 } as const;
 
-/** Each line is shown exactly as written; lines starting with http become links. */
+/** Full bibliography entries; shown verbatim on the site. */
 export const WORKS_CITED: string[] = [
-  "Comp Govt’t case studies",
-  "https://docs.google.com/file/d/1hvW3mmWFFlSKe6OaPGdwJ4uD4z0c4ut0/edit?usp=docslist_api&filetype=mspresentation",
-  "https://docs.google.com/presentation/d/12phUx6L8WaJ000TcMueUpE8DDsRGrefN/edit?usp=sharing&ouid=112846848183713968046&rtpof=true&sd=true",
-  "https://apcentral.collegeboard.org/media/pdf/ap-comparative-government-and-politics-course-and-exam-description.pdf",
-  "https://fsi.stanford.edu/news/mexicos-rule-law-reforms-declines-torture-and-rise-planted-evidence",
-  "https://www.journalofdemocracy.org/articles/the-putin-myth/",
-  "https://www.ireland.ie/en/dfa/role-policies/northern-ireland/about-the-good-friday-agreement/",
+  `Alterio, Ana Micaela. "Mexico's Judicial Reform: Democracy by Ballot or Power by Design". Review of Democracy. May 30, 2025. Accessed 17 Oct. 2026`,
+  `Department of Foreign Affairs and Trade. "About the Good Friday Agreement." Ireland.Ie, 2023, https://www.ireland.ie/en/dfa/role-policies/northern-ireland/about-the-good-friday-agreement/. Accessed 17 Oct. 2026.`,
+  `Magaloni, Beatriz. "Mexico's Rule of Law Reforms, Declines in Torture, and the Rise of Planted." Stanford.Edu, 27 Mar. 2026, https://fsi.stanford.edu/news/mexicos-rule-law-reforms-declines-torture-and-rise-planted-evidence. Accessed 17 Oct. 2026.`,
+  `Sanusi, Tife. "#EndSARS: Lekki Shooting Was a 'Massacre.' What Does This Ruling Mean for Activists?" Global Citizen, 22 Nov. 2021, https://www.globalcitizen.org/en/content/endsars-lekki-shooting-massacre-ruling-activists/. Accessed 17 Oct. 2026.`,
+  `Stoner, Kathryn. "The Putin Myth." Journal of Democracy, Apr. 2023, https://www.journalofdemocracy.org/articles/the-putin-myth/. Accessed 17 Oct. 2026.`,
 ];
 
 export type ChanceCard = {

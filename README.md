@@ -17,7 +17,7 @@ Edit **`content/gameContent.ts`** only:
 
 - `CHANCE_CARDS` — event text, points, and matching `indexNote`
 - `SKILL_CARDS` — AP MCQs (choices + `correctIndex` 0–3)
-- `WORKS_CITED` — one string per line, shown exactly as written (lines starting with `http` become links)
+- `WORKS_CITED` — full bibliography strings, shown exactly as written (embedded URLs are clickable)
 - `GAME_RULES` — numeric rules (movement range, win/lose thresholds)
 
 Board layout (25 chance / 3 skill squares) is generated from `GAME_RULES` in **`content/boardLayout.ts`**.
